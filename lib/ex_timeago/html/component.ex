@@ -1,4 +1,4 @@
-defmodule ExTimeago.HTML do
+defmodule ExTimeago.HTML.Component do
   use Phoenix.Component
 
   attr(:date, DateTime, required: true)
@@ -12,14 +12,16 @@ defmodule ExTimeago.HTML do
         end
       end)
 
+    render(assigns)
+  end
+
+  defp render(%{formatted: formatted} = assigns) when not is_nil(formatted) do
     ~H"""
-    <%= if @formatted do %>
     <time datetime="2025-06-23T02:49:16.829Z" title="Monday 23 June 2025 at 12:49:16 pm">
       {@formatted}
     </time>
-    <% else %>
-      {nil}
-    <% end %>
     """
   end
+
+  defp render(_), do: nil
 end

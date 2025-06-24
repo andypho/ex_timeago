@@ -4,35 +4,37 @@ defmodule ExTimeago.Languages.Bs do
   Bosnian
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "prije",
       prefix_from_now: "za",
       suffix_ago: nil,
       suffix_from_now: nil,
       second: "sekund",
-      seconds: fn value ->
+      seconds: fn value, _ ->
         numpf(value, "%d sekund", "%d sekunde", "%d sekundi")
       end,
       minute: "oko minut",
-      minutes: fn value ->
+      minutes: fn value, _ ->
         numpf(value, "%d minut", "%d minute", "%d minuta")
       end,
       hour: "oko sat",
-      hours: fn value ->
+      hours: fn value, _ ->
         numpf(value, "%d sat", "%d sata", "%d sati")
       end,
       day: "oko jednog dana",
-      days: fn value ->
+      days: fn value, _ ->
         numpf(value, "%d dan", "%d dana", "%d dana")
       end,
       month: "mjesec dana",
-      months: fn value ->
+      months: fn value, _ ->
         numpf(value, "%d mjesec", "%d mjeseca", "%d mjeseci")
       end,
       year: "prije godinu dana ",
-      years: fn value ->
+      years: fn value, _ ->
         numpf(value, "%d godinu", "%d godine", "%d godina")
       end,
       word_separator: " "

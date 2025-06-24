@@ -4,32 +4,34 @@ defmodule ExTimeago.Languages.Uk do
   Ukrainian
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: "через",
       suffix_ago: "тому",
       suffix_from_now: nil,
       seconds: "менше хвилини",
       minute: "хвилина",
-      minutes: fn value ->
+      minutes: fn value, _ ->
         numpf(value, "%d хвилина", "%d хвилини", "%d хвилин")
       end,
       hour: "година",
-      hours: fn value ->
+      hours: fn value, _ ->
         numpf(value, "%d година", "%d години", "%d годин")
       end,
       day: "день",
-      days: fn value ->
+      days: fn value, _ ->
         numpf(value, "%d день", "%d дні", "%d днів")
       end,
       month: "місяць",
-      months: fn value ->
+      months: fn value, _ ->
         numpf(value, "%d місяць", "%d місяці", "%d місяців")
       end,
       year: "рік",
-      years: fn value ->
+      years: fn value, _ ->
         numpf(value, "%d рік", "%d роки", "%d років")
       end
     }

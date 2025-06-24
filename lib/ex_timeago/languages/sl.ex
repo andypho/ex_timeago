@@ -4,35 +4,37 @@ defmodule ExTimeago.Languages.Sl do
   Slovenian
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: "čez",
       suffix_ago: "nazaj",
       suffix_from_now: nil,
       second: "sekundo",
-      seconds: fn value ->
+      seconds: fn value, _ ->
         numpf(value, ["%d sekund", "%d sekundo", "%d sekundi", "%d sekunde"])
       end,
       minute: "minuto",
-      minutes: fn value ->
+      minutes: fn value, _ ->
         numpf(value, ["%d minut", "%d minuto", "%d minuti", "%d minute"])
       end,
       hour: "eno uro",
-      hours: fn value ->
+      hours: fn value, _ ->
         numpf(value, ["%d ur", "%d uro", "%d uri", "%d ure"])
       end,
       day: "en dan",
-      days: fn value ->
+      days: fn value, _ ->
         numpf(value, ["%d dni", "%d dan", "%d dneva", "%d dni"])
       end,
       month: "en mesec",
-      months: fn value ->
+      months: fn value, _ ->
         numpf(value, ["%d mesecev", "%d mesec", "%d meseca", "%d mesece"])
       end,
       year: "eno leto",
-      years: fn value ->
+      years: fn value, _ ->
         numpf(value, ["%d let", "%d leto", "%d leti", "%d leta"])
       end,
       word_separator: " "

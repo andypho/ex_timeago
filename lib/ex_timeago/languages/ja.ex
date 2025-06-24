@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Ja do
   Japanese
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "",
       prefix_from_now: "今から",
       suffix_ago: "前",

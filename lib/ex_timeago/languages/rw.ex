@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Rw do
   Kinyarwanda
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "hashize",
       prefix_from_now: "mu",
       suffix_ago: nil,

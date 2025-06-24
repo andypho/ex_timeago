@@ -4,30 +4,32 @@ defmodule ExTimeago.Languages.Pl do
   Polish
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: "za",
       suffix_ago: "temu",
       suffix_from_now: nil,
       seconds: "mniej niż minutę",
       minute: "minutę",
-      minutes: fn value ->
+      minutes: fn value, _ ->
         numpf(value, "%d minuty", "%d minut")
       end,
       hour: "godzinę",
-      hours: fn value ->
+      hours: fn value, _ ->
         numpf(value, "%d godziny", "%d godzin")
       end,
       day: "dzień",
       days: "%d dni",
       month: "miesiąc",
-      months: fn value ->
+      months: fn value, _ ->
         numpf(value, "%d miesiące", "%d miesięcy")
       end,
       year: "rok",
-      years: fn value ->
+      years: fn value, _ ->
         numpf(value, "%d lata", "%d lat")
       end
     }

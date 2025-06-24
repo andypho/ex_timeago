@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Bg do
   Bulgarian
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "преди",
       prefix_from_now: "след",
       suffix_ago: nil,

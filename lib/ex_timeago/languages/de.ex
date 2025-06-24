@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.De do
   German
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "vor",
       prefix_from_now: "in",
       suffix_ago: "",

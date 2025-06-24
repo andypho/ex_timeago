@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Ro do
   Romanian
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "acum",
       prefix_from_now: "in timp de",
       suffix_ago: "",

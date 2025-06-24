@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.El do
   Greek
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "πριν",
       prefix_from_now: "σε",
       suffix_ago: "",

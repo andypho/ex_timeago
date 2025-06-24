@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Zh_CN do
   Simplified Chinese
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: nil,
       suffix_ago: "之前",

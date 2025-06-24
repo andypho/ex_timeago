@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Sk do
   Slovak
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "pred",
       prefix_from_now: nil,
       suffix_ago: nil,

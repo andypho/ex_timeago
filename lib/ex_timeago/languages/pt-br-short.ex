@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Pt_Br.Short do
   Portuguese Brasil shortened
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: nil,
       suffix_ago: "",

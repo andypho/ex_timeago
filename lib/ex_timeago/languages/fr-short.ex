@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Fr.Short do
   French shortened
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "il y a",
       prefix_from_now: "d'ici",
       seconds: "moins d'une minute",

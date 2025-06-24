@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Pt do
   Portuguese
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       suffix_ago: "atrás",
       suffix_from_now: "a partir de agora",
       seconds: "menos de um minuto",

@@ -4,20 +4,16 @@ defmodule ExTimeago.Languages.Default do
   Default
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: nil,
       suffix_ago: "ago",
       suffix_from_now: "from_now",
-      second: fn value ->
-        if value == 0 do
-          "%d seconds"
-        else
-          "%d second"
-        end
-      end,
+      second: "%d second",
       seconds: "%d seconds",
       minute: "%d minute",
       minutes: "%d minutes",

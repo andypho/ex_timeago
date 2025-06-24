@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Is do
   Icelandic
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "fyrir",
       prefix_from_now: "eftir",
       suffix_ago: "síðan",

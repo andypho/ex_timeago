@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Hi do
   Hindi
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: "अब से",
       suffix_ago: "पहले",

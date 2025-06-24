@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Vi do
   Vietnamese
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "cách đây",
       prefix_from_now: nil,
       suffix_ago: nil,

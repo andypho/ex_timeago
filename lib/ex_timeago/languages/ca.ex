@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Ca do
   Catalan
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "fa",
       prefix_from_now: "d'aqui a",
       suffix_ago: nil,

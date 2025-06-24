@@ -4,45 +4,47 @@ defmodule ExTimeago.Languages.Cs do
   Czech
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "před",
       prefix_from_now: "za",
       suffix_ago: nil,
       suffix_from_now: nil,
-      seconds: fn n, d ->
-        f(n, d, ["méně než minutou", "méně než minutu"])
+      seconds: fn value, d ->
+        f(value, d, ["méně než minutou", "méně než minutu"])
       end,
-      minute: fn n, d ->
-        f(n, d, ["minutou", "minutu"])
+      minute: fn value, d ->
+        f(value, d, ["minutou", "minutu"])
       end,
-      minutes: fn n, d ->
-        f(n, d, ["%d minutami", "%d minuty", "%d minut"])
+      minutes: fn value, d ->
+        f(value, d, ["%d minutami", "%d minuty", "%d minut"])
       end,
-      hour: fn n, d ->
-        f(n, d, ["hodinou", "hodinu"])
+      hour: fn value, d ->
+        f(value, d, ["hodinou", "hodinu"])
       end,
-      hours: fn n, d ->
-        f(n, d, ["%d hodinami", "%d hodiny", "%d hodin"])
+      hours: fn value, d ->
+        f(value, d, ["%d hodinami", "%d hodiny", "%d hodin"])
       end,
-      day: fn n, d ->
-        f(n, d, ["%d dnem", "%d den"])
+      day: fn value, d ->
+        f(value, d, ["%d dnem", "%d den"])
       end,
-      days: fn n, d ->
-        f(n, d, ["%d dny", "%d dny", "%d dní"])
+      days: fn value, d ->
+        f(value, d, ["%d dny", "%d dny", "%d dní"])
       end,
-      month: fn n, d ->
-        f(n, d, ["%d měsícem", "%d měsíc"])
+      month: fn value, d ->
+        f(value, d, ["%d měsícem", "%d měsíc"])
       end,
-      months: fn n, d ->
-        f(n, d, ["%d měsíci", "%d měsíce", "%d měsíců"])
+      months: fn value, d ->
+        f(value, d, ["%d měsíci", "%d měsíce", "%d měsíců"])
       end,
-      year: fn n, d ->
-        f(n, d, ["%d rokem", "%d rok"])
+      year: fn value, d ->
+        f(value, d, ["%d rokem", "%d rok"])
       end,
-      years: fn n, d ->
-        f(n, d, ["%d lety", "%d roky", "%d let"])
+      years: fn value, d ->
+        f(value, d, ["%d lety", "%d roky", "%d let"])
       end
     }
   end

@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Gl do
   Galician
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "hai",
       prefix_from_now: "dentro de",
       suffix_ago: "",

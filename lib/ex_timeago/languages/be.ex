@@ -4,32 +4,34 @@ defmodule ExTimeago.Languages.Be do
   Belarusian
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: "праз",
       suffix_ago: "таму",
       suffix_from_now: nil,
       seconds: "менш хвіліны",
       minute: "хвіліну",
-      minutes: fn value ->
+      minutes: fn value, _ ->
         numpf(value, "%d хвіліна", "%d хвіліны", "%d хвілін")
       end,
       hour: "гадзіну",
-      hours: fn value ->
+      hours: fn value, _ ->
         numpf(value, "%d гадзіна", "%d гадзіны", "%d гадзін")
       end,
       day: "дзень",
-      days: fn value ->
+      days: fn value, _ ->
         numpf(value, "%d дзень", "%d дні", "%d дзён")
       end,
       month: "месяц",
-      months: fn value ->
+      months: fn value, _ ->
         numpf(value, "%d месяц", "%d месяцы", "%d месяцаў")
       end,
       year: "год",
-      years: fn value ->
+      years: fn value, _ ->
         numpf(value, "%d год", "%d гады", "%d гадоў")
       end
     }

@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.It do
   Italian
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       suffix_ago: "fa",
       suffix_from_now: "da ora",
       seconds: "meno di un minuto",

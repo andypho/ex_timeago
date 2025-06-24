@@ -4,15 +4,17 @@ defmodule ExTimeago.Languages.Ar do
   Arabic
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "منذ",
       prefix_from_now: "بعد",
       suffix_ago: nil,
       # null OR "من الآن"
       suffix_from_now: nil,
-      second: fn value ->
+      second: fn value, _ ->
         numpf(value, [
           "أقل من ثانية",
           "ثانية واحدة",
@@ -22,7 +24,7 @@ defmodule ExTimeago.Languages.Ar do
           "%d ثانية"
         ])
       end,
-      seconds: fn value ->
+      seconds: fn value, _ ->
         numpf(value, [
           "أقل من ثانية",
           "ثانية واحدة",
@@ -32,7 +34,7 @@ defmodule ExTimeago.Languages.Ar do
           "%d ثانية"
         ])
       end,
-      minute: fn value ->
+      minute: fn value, _ ->
         numpf(value, [
           "أقل من دقيقة",
           "دقيقة واحدة",
@@ -42,7 +44,7 @@ defmodule ExTimeago.Languages.Ar do
           "دقيقة"
         ])
       end,
-      minutes: fn value ->
+      minutes: fn value, _ ->
         numpf(value, [
           "أقل من دقيقة",
           "دقيقة واحدة",
@@ -52,7 +54,7 @@ defmodule ExTimeago.Languages.Ar do
           "دقيقة"
         ])
       end,
-      hour: fn value ->
+      hour: fn value, _ ->
         numpf(value, [
           "أقل من ساعة",
           "ساعة واحدة",
@@ -62,7 +64,7 @@ defmodule ExTimeago.Languages.Ar do
           "%d ساعة"
         ])
       end,
-      hours: fn value ->
+      hours: fn value, _ ->
         numpf(value, [
           "أقل من ساعة",
           "ساعة واحدة",
@@ -72,7 +74,7 @@ defmodule ExTimeago.Languages.Ar do
           "%d ساعة"
         ])
       end,
-      day: fn value ->
+      day: fn value, _ ->
         numpf(value, [
           "أقل من يوم",
           "يوم واحد",
@@ -82,7 +84,7 @@ defmodule ExTimeago.Languages.Ar do
           "%d يوم"
         ])
       end,
-      days: fn value ->
+      days: fn value, _ ->
         numpf(value, [
           "أقل من يوم",
           "يوم واحد",
@@ -92,7 +94,7 @@ defmodule ExTimeago.Languages.Ar do
           "%d يوم"
         ])
       end,
-      month: fn value ->
+      month: fn value, _ ->
         numpf(value, [
           "أقل من شهر",
           "شهر واحد",
@@ -102,7 +104,7 @@ defmodule ExTimeago.Languages.Ar do
           "%d شهر"
         ])
       end,
-      months: fn value ->
+      months: fn value, _ ->
         numpf(value, [
           "أقل من شهر",
           "شهر واحد",
@@ -112,7 +114,7 @@ defmodule ExTimeago.Languages.Ar do
           "%d شهر"
         ])
       end,
-      year: fn value ->
+      year: fn value, _ ->
         numpf(value, [
           "أقل من عام",
           "عام واحد",
@@ -121,7 +123,7 @@ defmodule ExTimeago.Languages.Ar do
           "%d عامًا"
         ])
       end,
-      years: fn value ->
+      years: fn value, _ ->
         numpf(value, [
           "أقل من عام",
           "عام واحد",

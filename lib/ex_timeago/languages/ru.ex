@@ -4,12 +4,14 @@ defmodule ExTimeago.Languages.Ru do
   Russian
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: "через",
-      suffix_ago: fn value ->
+      suffix_ago: fn value, _ ->
         if value == 0 do
           ""
         else
@@ -17,7 +19,7 @@ defmodule ExTimeago.Languages.Ru do
         end
       end,
       suffix_from_now: nil,
-      seconds: fn value ->
+      seconds: fn value, _ ->
         if value == 0 do
           "только что"
         else
@@ -25,23 +27,23 @@ defmodule ExTimeago.Languages.Ru do
         end
       end,
       minute: "минуту",
-      minutes: fn value ->
+      minutes: fn value, _ ->
         numpf(value, "%d минуту", "%d минуты", "%d минут")
       end,
       hour: "час",
-      hours: fn value ->
+      hours: fn value, _ ->
         numpf(value, "%d час", "%d часа", "%d часов")
       end,
       day: "день",
-      days: fn value ->
+      days: fn value, _ ->
         numpf(value, "%d день", "%d дня", "%d дней")
       end,
       month: "месяц",
-      months: fn value ->
+      months: fn value, _ ->
         numpf(value, "%d месяц", "%d месяца", "%d месяцев")
       end,
       year: "год",
-      years: fn value ->
+      years: fn value, _ ->
         numpf(value, "%d год", "%d года", "%d лет")
       end
     }

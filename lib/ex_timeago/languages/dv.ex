@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Dv do
   Dhivehi time in Thaana for timeago.js
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: nil,
       suffix_ago: "ކުރިން",

@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Th do
   Thai
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: nil,
       suffix_ago: "ที่แล้ว",

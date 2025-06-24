@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Fr do
   French
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       # environ ~= about, it's optional
       prefix_ago: "il y a",
       prefix_from_now: "d'ici",

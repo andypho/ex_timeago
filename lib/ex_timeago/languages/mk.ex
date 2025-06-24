@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Mk do
   Macedonian
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "пред",
       prefix_from_now: "за",
       suffix_ago: nil,

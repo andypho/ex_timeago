@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Es do
   Spanish
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "hace",
       prefix_from_now: "dentro de",
       suffix_ago: "",

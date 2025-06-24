@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Nl do
   Dutch
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: "over",
       suffix_ago: "geleden",

@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Sv do
   Swedish
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "för",
       prefix_from_now: "om",
       suffix_ago: "sedan",

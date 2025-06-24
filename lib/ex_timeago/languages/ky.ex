@@ -4,32 +4,34 @@ defmodule ExTimeago.Languages.Ky do
   Russian
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: nil,
       prefix_from_now: "через",
       suffix_ago: "мурун",
       suffix_from_now: nil,
       seconds: "1 минуттан аз",
       minute: "минута",
-      minutes: fn value ->
+      minutes: fn value, _ ->
         numpf(value, "%d минута", "%d минута", "%d минут")
       end,
       hour: "саат",
-      hours: fn value ->
+      hours: fn value, _ ->
         numpf(value, "%d саат", "%d саат", "%d саат")
       end,
       day: "күн",
-      days: fn value ->
+      days: fn value, _ ->
         numpf(value, "%d күн", "%d күн", "%d күн")
       end,
       month: "ай",
-      months: fn value ->
+      months: fn value, _ ->
         numpf(value, "%d ай", "%d ай", "%d ай")
       end,
       year: "жыл",
-      years: fn value ->
+      years: fn value, _ ->
         numpf(value, "%d жыл", "%d жыл", "%d жыл")
       end
     }

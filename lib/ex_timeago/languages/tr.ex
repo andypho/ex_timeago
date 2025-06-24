@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Tr do
   Turkish
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       suffix_ago: "önce",
       suffix_from_now: "sonra",
       second: "1 saniye",

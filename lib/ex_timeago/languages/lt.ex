@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Lt do
   Lithuanian
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "prieš",
       prefix_from_now: nil,
       suffix_ago: nil,

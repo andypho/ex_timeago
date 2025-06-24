@@ -4,9 +4,11 @@ defmodule ExTimeago.Languages.Pt_Br do
   Brazilian Portuguese
   """
 
+  alias ExTimeago.Language
+
   @impl ExTimeago.Languages
   def strings do
-    %{
+    %Language{
       prefix_ago: "há",
       prefix_from_now: "em",
       suffix_ago: nil,

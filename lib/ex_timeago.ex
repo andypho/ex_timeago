@@ -13,7 +13,7 @@ defmodule ExTimeago do
 
   """
 
-  import ExTimeago.Something
+  require ExTimeago.Loader
 
   alias ExTimeago.{
     Languages
@@ -28,13 +28,12 @@ defmodule ExTimeago do
   @month 30 * @day
   @year 365 * @day
 
-  @language_packs get_packs()
+  @language_packs ExTimeago.Loader.get_packs()
 
   def language_packs(), do: @language_packs
 
   @doc false
   def start do
-    # Application.started_applications()
     Application.ensure_all_started(:ex_timeago)
   end
 
@@ -94,12 +93,6 @@ defmodule ExTimeago do
 
   defp next_formatter(value, unit, suffix, epoch_milli, formatter, now) do
     current = DateTime.to_unix(now, :millisecond)
-    # unit =
-    #   if value !== 1 do
-    #     unit <> "s"
-    #   else
-    #     unit
-    #   end
 
     # Convert weeks to days if strings don't handle weeks
     {value, unit} =
@@ -160,10 +153,6 @@ defmodule ExTimeago do
           date_string
       end
 
-    # IO.inspect({"next_formatter", formatter})
-    # IO.inspect({"next_formatter", {value, is_plural, a_unit}})
-    # IO.inspect({"date_string", date_string})
-
     word_separator =
       if is_binary(formatter[:word_separator]) do
         formatter.word_separator
@@ -191,10 +180,6 @@ defmodule ExTimeago do
   @spec normalize_fn(Function.t() | String.t(), any, any, any | nil) :: any
   def normalize_fn(string_or_fn, value, distance_millis, numbers) do
     if is_function(string_or_fn) do
-      IO.inspect({"string_or_fn", string_or_fn})
-
-      IO.inspect({"normalize_fn", value, distance_millis, numbers})
-
       args =
         case :erlang.fun_info(string_or_fn)[:arity] do
           2 -> [value, distance_millis]
@@ -228,13 +213,10 @@ defmodule ExTimeago do
 
   defp process_formatter(module, opts) when is_atom(module) do
     cond do
-      module in @language_packs ->
-        module.strings()
-        |> handle_opts(opts)
-
-      true ->
-        raise "todo"
+      module in @language_packs -> module.strings()
+      true -> module.strings()
     end
+    |> handle_opts(opts)
   end
 
   defp process_formatter(formatter, opts) when is_map(formatter) do
@@ -245,11 +227,6 @@ defmodule ExTimeago do
       Map.put(acc, k, formatter[k])
     end)
     |> handle_opts(opts)
-  end
-
-  defp process_formatter(_formatter, _opts) do
-    # TODO
-    %{}
   end
 
   defp handle_opts(map, opts) do
